@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const request = require('request');
 const bodyParser = require('body-parser');
+var HTTP_PORT = process.env.PORT || 8080;
 
 const apiKey = 'd7b0697833a1d253dd7140e692615cb3';
 
@@ -14,9 +15,9 @@ app.get('/', function(req, res){
     res.render('index',{weather :null,error:null});
 })
 
-app.listen(3000,function(){
-    console.log("the app is listening on port 3000!")
-});
+app.listen(HTTP_PORT,function(){
+    console.log("the app is listening on port 8080!")
+});1
 
 app.post('/', function(req, res){
     let city = req.body.city;
@@ -32,6 +33,7 @@ app.post('/', function(req, res){
             if(weather.main != undefined){
                 let weatherText = `It's ${weather.main.temp} degrees Celcius in ${weather.name}!`;
                 res.render('index',{weather :weatherText, error: null});
+               
                 console.log(weatherText);
                 
             }
