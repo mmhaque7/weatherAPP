@@ -4,7 +4,7 @@ const request = require('request');
 const bodyParser = require('body-parser');
 var HTTP_PORT = process.env.PORT || 8080;
 
-const apiKey = 'd7b0697833a1d253dd7140e692615cb3';
+const apiKey = '***************************';///get the api key from openweathermap.org!
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
